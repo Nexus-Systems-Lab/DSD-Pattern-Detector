@@ -12,7 +12,7 @@
 
 ![Full Proteus circuit schematic](assets/proteus-schematic.png)
 
-> **Project status:** Original Proteus design and group report are preserved in this repository. The reference FSM verification script checks the report's transition table; it does **not** claim to electrically simulate or certify the supplied Proteus schematic.
+> **Project status:** Original Proteus design and group report are preserved in this repository. The engineering notes explain the report's FSM transition table and identify discrepancies that should be checked in Proteus.
 
 ## At a glance
 
@@ -44,8 +44,6 @@ digital-pattern-detector-0010/
 │   ├── ROOT.LYT                      Layout data
 │   ├── ROOT.CDB                      Project database
 │   └── SCRIPTS/PWRRAILS.DAT          Power-rail configuration
-└── verification/
-    └── verify_fsm.py                Standard-library FSM reference check
 ```
 
 The ZIP supplied for this project contains these five Proteus files. The report describes EasyEDA PCB layouts, but no editable EasyEDA source or fabrication files were included in the supplied archive.
@@ -105,7 +103,7 @@ D0    = ¬Q1·¬Q0·¬X + Q1·¬Q0·X + Q1·Q0·¬X
 MATCH = Q1·Q0·¬X
 ```
 
-`D1` and `MATCH` agree with the report's listed equations. The `D0` equation here includes the term `Q1·Q0·¬X`, required by its transition table for `S3` with `X=0`. The printed `D0` equation omits that term. These are **reference equations derived from the table**, not a claim that the supplied Proteus wiring already implements the correction. See [design notes](docs/design-notes.md#report-consistency-and-verification-boundary).
+`D1` and `MATCH` agree with the report's listed equations. The `D0` equation here includes the term `Q1·Q0·¬X`, required by its transition table for `S3` with `X=0`. The printed `D0` equation omits that term. These are **reference equations derived from the table**, not a claim that the supplied Proteus wiring already implements the correction. See [design notes](docs/design-notes.md#report-consistency-and-design-limits).
 
 ## Open and inspect
 
@@ -123,16 +121,6 @@ These photographs document the breadboard assembly and illuminated indicator LED
 <table>
 <tr><td><a href="assets/hardware/breadboard-overview.png"><img src="assets/hardware/breadboard-overview.png" alt="Full breadboard assembly with connected jumper wires and lit LEDs" width="220"></a></td><td><a href="assets/hardware/red-led-closeup.png"><img src="assets/hardware/red-led-closeup.png" alt="Close-up of red LEDs on the breadboard" width="220"></a></td><td><a href="assets/hardware/blue-green-led-closeup.png"><img src="assets/hardware/blue-green-led-closeup.png" alt="Close-up of blue and green LEDs in the circuit" width="220"></a></td></tr>
 </table>
-
-## Run the reference check
-
-Python 3 is sufficient; there are no external packages.
-
-```bash
-python verification/verify_fsm.py
-```
-
-The script checks all eight state/input rows against the corrected equations, then exhaustively compares the FSM with a sliding-window `0010` detector for every binary stream of lengths 0 through 13 (16,383 streams). It checks the **documented FSM model**, not the electrical Proteus project.
 
 ## Documentation and evidence
 

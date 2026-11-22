@@ -2,7 +2,7 @@
 
 ## Scope and source
 
-These notes describe the supplied IE3004 Group 10 report and Proteus archive. They distinguish documented behavior from behavior verified in code. The project target is the serial sequence `0010`.
+These notes describe the supplied IE3004 Group 10 report and Proteus archive. The project target is the serial sequence `0010`.
 
 ## Functional blocks
 
@@ -62,13 +62,13 @@ MATCH = Q1·Q0·¬X
 
 The equations are a direct sum-of-products derivation from the eight rows. They describe the *enabled* transition logic and omit reset/enable gating.
 
-## Report consistency and verification boundary
+## Report consistency and design limits
 
 1. **Overlapping vs non-overlapping:** The state table and page 5 workflow transition `S3 → S1` on the matching `0`. This retains the `0` as the next prefix and allows overlapping matches. Several other report paragraphs and the diagram description say non-overlapping and describe a return to `S0`. A truly non-overlapping machine would change that row to `S3, X=0 → S0, MATCH=1`, which also changes `D0` logic. This repository uses the report's explicit state table as the reference model; inspect the actual schematic to determine its implemented behavior.
 2. **Printed `D0` expression:** The report gives `D0 = ¬Q1·¬Q0·¬X + Q1·¬Q0·X`. For `Q1Q0=11` and `X=0`, it evaluates to `0`, while the transition table requires next state `01` and therefore `D0=1`. The corrected expression adds `Q1·Q0·¬X`.
 3. **Output semantics:** The report mentions combinational `MATCH`, registered `DETECT`, and optional latched `SEEN`. These should not be treated as identical signals without tracing the netlist and timing waveform.
 4. **LFSR detail:** The report names a four-bit LFSR but does not specify an unambiguous feedback polynomial, seed, or period. No maximal-length claim is made here.
-5. **Validation:** `verification/verify_fsm.py` proves consistency of the reference FSM against the table and sliding-window software model for all streams through length 13. It cannot establish that `ROOT.DSN`, PCB layout, or physical assembly matches the model.
+5. **Validation limit:** The documented transition table and equations are analytical references. The supplied Proteus schematic, PCB screenshots and physical assembly should be checked separately before claiming an exact implementation match.
 
 ## Reproduction checklist
 
