@@ -32,7 +32,9 @@
 digital-pattern-detector-0010/
 ├── README.md                         Project overview and engineering notes
 ├── assets/
-│   └── proteus-schematic.png         Screenshot supplied with the project
+│   ├── proteus-schematic.png         Full Proteus circuit screenshot
+│   ├── easyeda/                     Four schematic sheets and two PCB views
+│   └── hardware/                    Three breadboard build photographs
 ├── docs/
 │   ├── IE3004_Group_10_DSD.pdf       Original 19-page group report
 │   └── design-notes.md               Detailed architecture, timing, logic and caveats
@@ -47,6 +49,19 @@ digital-pattern-detector-0010/
 ```
 
 The ZIP supplied for this project contains these five Proteus files. The report describes EasyEDA PCB layouts, but no editable EasyEDA source or fabrication files were included in the supplied archive.
+
+## Design gallery
+
+The following are the supplied EasyEDA screenshots. The sheet numbers follow the title blocks visible in the images. These are reference images; editable EasyEDA design files were not supplied. Click any preview for the full image.
+
+<table>
+<tr><th>Sheet 1</th><th>Sheet 2</th></tr>
+<tr><td><a href="assets/easyeda/schematic-1.jpeg"><img src="assets/easyeda/schematic-1.jpeg" alt="EasyEDA schematic sheet 1" width="320"></a></td><td><a href="assets/easyeda/schematic-2.jpeg"><img src="assets/easyeda/schematic-2.jpeg" alt="EasyEDA schematic sheet 2" width="320"></a></td></tr>
+<tr><th>Sheet 3</th><th>Sheet 4</th></tr>
+<tr><td><a href="assets/easyeda/schematic-3.jpeg"><img src="assets/easyeda/schematic-3.jpeg" alt="EasyEDA schematic sheet 3" width="320"></a></td><td><a href="assets/easyeda/schematic-4.jpeg"><img src="assets/easyeda/schematic-4.jpeg" alt="EasyEDA schematic sheet 4" width="320"></a></td></tr>
+<tr><th>PCB layout view 1</th><th>PCB layout view 2</th></tr>
+<tr><td><a href="assets/easyeda/pcb-layout-1.jpeg"><img src="assets/easyeda/pcb-layout-1.jpeg" alt="EasyEDA PCB layout view 1" width="320"></a></td><td><a href="assets/easyeda/pcb-layout-2.jpeg"><img src="assets/easyeda/pcb-layout-2.jpeg" alt="EasyEDA PCB layout view 2" width="320"></a></td></tr>
+</table>
 
 ## How the system works
 
@@ -101,6 +116,15 @@ MATCH = Q1·Q0·¬X
 
 Proteus is proprietary software and is not bundled here. This repository does not include a headless Proteus test run or hardware measurements.
 
+## Physical prototype
+
+These photographs document the breadboard assembly and illuminated indicator LEDs. They show the build, but a still photograph alone does not prove the exact serial input sequence or detection timing.
+
+<table>
+<tr><th>Assembly overview</th><th>Red indicators</th><th>Blue and green indicators</th></tr>
+<tr><td><a href="assets/hardware/breadboard-overview.png"><img src="assets/hardware/breadboard-overview.png" alt="Full breadboard assembly with connected jumper wires and lit LEDs" width="220"></a></td><td><a href="assets/hardware/red-led-closeup.png"><img src="assets/hardware/red-led-closeup.png" alt="Close-up of red LEDs on the breadboard" width="220"></a></td><td><a href="assets/hardware/blue-green-led-closeup.png"><img src="assets/hardware/blue-green-led-closeup.png" alt="Close-up of blue and green LEDs in the circuit" width="220"></a></td></tr>
+</table>
+
 ## Run the reference check
 
 Python 3 is sufficient; there are no external packages.
@@ -117,6 +141,8 @@ The script checks all eight state/input rows against the corrected equations, th
 - [Original group report](docs/IE3004_Group_10_DSD.pdf): architecture, K-maps, Proteus screenshots, EasyEDA layout images, waveform and physical-build images.
 - [Proteus source](proteus/ROOT.DSN): editable schematic supplied in the original project ZIP.
 - [Full schematic screenshot](assets/proteus-schematic.png): quick visual overview; zoom into the Proteus source for net-level review.
+- [EasyEDA screenshots](assets/easyeda/): schematic sheets and PCB layout views supplied after the initial project archive.
+- [Breadboard photographs](assets/hardware/): physical assembly and LED close-ups.
 - [Demonstration videos](https://drive.google.com/drive/folders/1mSg9VXbnH145L3aklPPoBSd-jyJw_CjK): external folder linked in the group report; availability has not been checked here.
 
 ## Team and attribution

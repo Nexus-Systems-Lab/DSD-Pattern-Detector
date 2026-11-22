@@ -16,6 +16,8 @@ These notes describe the supplied IE3004 Group 10 report and Proteus archive. Th
 
 The report identifies 74LS74 dual positive-edge D flip-flops; 74LS04 inverters; 74LS08 AND; 74LS32 OR; and 74LS86 XOR gates. Clock, logic-state input, LEDs and resistors are visible in the supplied schematic. The report describes EasyEDA layouts for the two-bit counter, pseudo-parallel generator and PISO, plus Proteus timing and a physical implementation photograph. Editable EasyEDA PCB files were not supplied.
 
+Additional supplied screenshots are archived under `assets/easyeda/`: four numbered EasyEDA schematic sheets and two PCB layout views. Three photographs under `assets/hardware/` show the breadboard assembly and lit indicators. The EasyEDA screenshots display SN74HC-series part labels in some blocks, while the Proteus/report discussion describes 74LS-series TTL parts. The two sets of images should therefore be treated as distinct design evidence rather than assumed to be identical netlists or directly interchangeable chip choices.
+
 ## Timing contract
 
 All sequential blocks share a positive-edge clock. The report describes `LOAD` and `VALID` control, with the detector consuming the bit held at `P3` **before** each valid rising edge. The PISO changes after the edge, so using the post-edge value as the just-consumed bit would shift the detector's interpretation by one bit.
