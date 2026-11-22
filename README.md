@@ -121,7 +121,6 @@ Proteus is proprietary software and is not bundled here. This repository does no
 These photographs document the breadboard assembly and illuminated indicator LEDs. They show the build, but a still photograph alone does not prove the exact serial input sequence or detection timing.
 
 <table>
-<tr><th>Assembly overview</th><th>Red indicators</th><th>Blue and green indicators</th></tr>
 <tr><td><a href="assets/hardware/breadboard-overview.png"><img src="assets/hardware/breadboard-overview.png" alt="Full breadboard assembly with connected jumper wires and lit LEDs" width="220"></a></td><td><a href="assets/hardware/red-led-closeup.png"><img src="assets/hardware/red-led-closeup.png" alt="Close-up of red LEDs on the breadboard" width="220"></a></td><td><a href="assets/hardware/blue-green-led-closeup.png"><img src="assets/hardware/blue-green-led-closeup.png" alt="Close-up of blue and green LEDs in the circuit" width="220"></a></td></tr>
 </table>
 
