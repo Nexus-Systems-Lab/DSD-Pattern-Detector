@@ -132,6 +132,18 @@ These photographs document the breadboard assembly and illuminated indicator LED
 - [Breadboard photographs](assets/hardware/): physical assembly and LED close-ups.
 - [Demonstration videos](https://drive.google.com/drive/folders/1mSg9VXbnH145L3aklPPoBSd-jyJw_CjK): external folder linked in the group report; availability has not been checked here.
 
+## Team Contributions
+
+This project was collaboratively developed by three team members as part of the Digital System Design assignment.
+
+- **Random Pattern Generator (RPG):** Designed and implemented the random binary sequence generation circuit.
+
+- *PISO Shift Register:** Developed the Parallel-In Serial-Out (PISO) shift register for serial data transmission and clock synchronization.
+
+- **Mealy FSM & Pattern Detection:** Designed and implemented the Mealy Finite State Machine (FSM) to detect the assigned `0010` binary pattern.
+
+All team members contributed to circuit integration, simulation, testing, and project documentation.
+
 ## Team and attribution
 
 **IE3004 · Digital System Design · Group 10**
