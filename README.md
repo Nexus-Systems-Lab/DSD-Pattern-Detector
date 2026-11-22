@@ -138,7 +138,7 @@ This project was collaboratively developed by three team members as part of the 
 
 - **Random Pattern Generator (RPG):** Designed and implemented the random binary sequence generation circuit.
 
-- *PISO Shift Register:** Developed the Parallel-In Serial-Out (PISO) shift register for serial data transmission and clock synchronization.
+- **PISO Shift Register:** Developed the Parallel-In Serial-Out (PISO) shift register for serial data transmission and clock synchronization.
 
 - **Mealy FSM & Pattern Detection:** Designed and implemented the Mealy Finite State Machine (FSM) to detect the assigned `0010` binary pattern.
 
